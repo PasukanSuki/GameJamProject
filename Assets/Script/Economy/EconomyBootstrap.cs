@@ -50,6 +50,8 @@ public class EconomyBootstrap : MonoBehaviour
                 }
             }
         }
+
+        EnsureShopkeeperNPCs();
     }
 
     private static Transform FindChildRecursive(Transform parent, string childName)
@@ -106,6 +108,49 @@ public class EconomyBootstrap : MonoBehaviour
             }
 
             Destroy(behaviour.gameObject);
+        }
+    }
+
+    private static void EnsureShopkeeperNPCs()
+    {
+        SellerNpc[] existingSellers = FindObjectsByType<SellerNpc>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        if (existingSellers != null && existingSellers.Length > 0)
+        {
+            foreach (SellerNpc seller in existingSellers)
+            {
+                if (seller != null && seller.GetComponent<ShopkeeperDialogueTrigger>() == null)
+                {
+                    seller.gameObject.AddComponent<ShopkeeperDialogueTrigger>();
+                }
+            }
+            return;
+        }
+
+        foreach (GameObject go in FindObjectsByType<GameObject>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if (go == null) continue;
+            string name = go.name;
+            if (name.Contains("NpcNew") || name.Contains("Penjual") || name.Contains("Seller"))
+            {
+                if (go.GetComponent<ShopkeeperDialogueTrigger>() == null)
+                {
+                    go.AddComponent<ShopkeeperDialogueTrigger>();
+                }
+
+                if (go.GetComponent<SellerNpc>() == null)
+                {
+                    go.AddComponent<SellerNpc>();
+                }
+
+                if (go.GetComponent<Collider>() == null)
+                {
+                    CapsuleCollider col = go.AddComponent<CapsuleCollider>();
+                    col.height = 2f;
+                    col.radius = 0.5f;
+                    col.center = new Vector3(0f, 1f, 0f);
+                }
+                break;
+            }
         }
     }
 }

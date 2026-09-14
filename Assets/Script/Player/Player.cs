@@ -160,6 +160,11 @@ public class Player : MonoBehaviour
             cameraPivot = playerCamera.transform;
         }
 
+        if (playerCamera != null && !playerCamera.CompareTag("MainCamera"))
+        {
+            playerCamera.tag = "MainCamera";
+        }
+
         if (playerCamera == null)
         {
             GameObject cameraObject = new GameObject("Player Camera");
@@ -167,6 +172,7 @@ public class Player : MonoBehaviour
             cameraObject.transform.localPosition = new Vector3(0f, 0.40f, 0f);
             cameraObject.transform.localRotation = Quaternion.identity;
             playerCamera = cameraObject.AddComponent<Camera>();
+            playerCamera.tag = "MainCamera";
             cameraPivot = cameraObject.transform;
         }
 

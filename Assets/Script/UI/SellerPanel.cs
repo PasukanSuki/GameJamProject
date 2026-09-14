@@ -22,6 +22,11 @@ public class SellerPanel : MonoBehaviour
     private ItemDefinition selectedItem;
     private int selectedQuantity = 1;
     private bool isOpen;
+    private bool didSellInCurrentSession;
+
+    public static event System.Action<SellerManager, Player> ShopOpened;
+    public static event System.Action<bool> ShopClosed;
+    public static event System.Action<ItemDefinition, int, int> ItemSoldSuccessfully;
 
     public bool IsOpen => isOpen;
 
@@ -49,6 +54,7 @@ public class SellerPanel : MonoBehaviour
         seller = sellerManager;
         player = playerTarget;
         seller.ItemSold += HandleItemSold;
+        didSellInCurrentSession = false;
         CloseOtherPanels();
         isOpen = true;
         panelRoot.SetActive(true);
@@ -58,10 +64,13 @@ public class SellerPanel : MonoBehaviour
         selectedItem = null;
         selectedQuantity = 1;
         Refresh();
+        ShopOpened?.Invoke(sellerManager, playerTarget);
     }
 
     public void Close()
     {
+        if (!isOpen) return;
+
         isOpen = false;
         if (panelRoot != null)
         {
@@ -71,6 +80,7 @@ public class SellerPanel : MonoBehaviour
         player?.SetPaused(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        ShopClosed?.Invoke(didSellInCurrentSession);
     }
 
     private void Update()
@@ -184,7 +194,9 @@ public class SellerPanel : MonoBehaviour
 
     private void HandleItemSold(ItemDefinition item, int quantity, int totalValue)
     {
+        didSellInCurrentSession = true;
         Refresh();
+        ItemSoldSuccessfully?.Invoke(item, quantity, totalValue);
     }
 
     private void RefreshSelected()
