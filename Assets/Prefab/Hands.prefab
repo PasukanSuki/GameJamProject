@@ -62,7 +62,8 @@ MonoBehaviour:
   horizontalBob: 5
   rotationAmount: 3
   smoothSpeed: 12
-  grabDuration: 0
+  grabDuration: 0.22
+  grabForwardOffset: {x: -150, y: 130}
 --- !u!1 &2135823432219169769
 GameObject:
   m_ObjectHideFlags: 0

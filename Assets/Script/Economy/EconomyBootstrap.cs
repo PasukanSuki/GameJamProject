@@ -18,6 +18,18 @@ public class EconomyBootstrap : MonoBehaviour
             canvas.gameObject.AddComponent<WalletCounter>();
         }
 
+        if (canvas != null && canvas.GetComponentInChildren<CrosshairDot>(true) == null)
+        {
+            canvas.gameObject.AddComponent<CrosshairDot>();
+        }
+
+        if (canvas != null && canvas.GetComponentInChildren<InventoryFullWarning>(true) == null)
+        {
+            GameObject warningObj = new GameObject("InventoryFullWarning");
+            warningObj.transform.SetParent(canvas.transform, false);
+            warningObj.AddComponent<InventoryFullWarning>();
+        }
+
         if (createRuntimeUpgradePanel)
         {
             if (canvas != null && canvas.GetComponentInChildren<UpgradePanel>(true) == null)

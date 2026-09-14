@@ -175,7 +175,20 @@ public class Player : MonoBehaviour
             handsAnimator = GetComponentInChildren<FirstPersonHands>(true);
         }
 
+        if (handsAnimator == null)
+        {
+            handsAnimator = FindAnyObjectByType<FirstPersonHands>(FindObjectsInactive.Include);
+        }
+
         SetPaused(false);
+    }
+
+    private void Start()
+    {
+        if (handsAnimator == null)
+        {
+            handsAnimator = FindAnyObjectByType<FirstPersonHands>(FindObjectsInactive.Include);
+        }
     }
 
     private void OnEnable()
@@ -325,8 +338,9 @@ public class Player : MonoBehaviour
 
         bool interactPressed = (interactAction != null && interactAction.WasPressedThisFrame())
             || (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame);
-        bool pickupPressed = interactPressed
-            || (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame);
+        bool leftClickDown = Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
+        bool leftClickHeld = Mouse.current != null && Mouse.current.leftButton.isPressed;
+        bool pickupPressed = interactPressed || leftClickDown || (leftClickHeld && pickupTimer <= 0f);
         if (!pickupPressed)
         {
             return;
@@ -338,19 +352,25 @@ public class Player : MonoBehaviour
             return;
         }
 
-        Ray pickupRay = new Ray(pickupCamera.transform.position, pickupCamera.transform.forward);
-        bool hasHit = Physics.Raycast(pickupRay, out RaycastHit hit, pickupRange, pickupLayers, QueryTriggerInteraction.Ignore);
-
         if (pickupTimer > 0f)
         {
             return;
         }
+
+        Ray pickupRay = new Ray(pickupCamera.transform.position, pickupCamera.transform.forward);
+        bool hasHit = Physics.Raycast(pickupRay, out RaycastHit hit, pickupRange, pickupLayers, QueryTriggerInteraction.Ignore);
 
         SellerNpc sellerNpc = hasHit ? hit.collider.GetComponentInParent<SellerNpc>() : null;
         if (interactPressed && sellerNpc != null && sellerNpc.Open(this))
         {
             pickupTimer = pickupInterval;
             return;
+        }
+
+        // Mainkan animasi grab maju-mundur
+        if (sellerNpc == null)
+        {
+            handsAnimator?.PlayGrab();
         }
 
         if (hasHit && TryCollectPickup(hit.collider, pickupCamera.transform))
@@ -374,6 +394,15 @@ public class Player : MonoBehaviour
             {
                 return;
             }
+        }
+
+        if (sellerNpc == null)
+        {
+            if (IsBagFull)
+            {
+                InventoryFullWarning.TriggerAlert();
+            }
+            pickupTimer = pickupInterval * 0.7f;
         }
     }
 
@@ -439,6 +468,10 @@ public class Player : MonoBehaviour
     {
         if (amount <= 0 || carriedTrash + amount > bagCapacity)
         {
+            if (carriedTrash >= bagCapacity)
+            {
+                InventoryFullWarning.TriggerAlert();
+            }
             return false;
         }
 
