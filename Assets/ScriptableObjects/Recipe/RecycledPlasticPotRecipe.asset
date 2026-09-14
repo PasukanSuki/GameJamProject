@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4f5b6c7d8e4901a2b3c4d5e6f70819, type: 3}
+  m_Name: RecycledPlasticPotRecipe
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
+  output: {fileID: 11400000, guid: 46b4480097b4f6640aa93bb1242166be, type: 2}
+  outputQuantity: 1
+  ingredients:
+  - item: {fileID: 0}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 6c8f2d1a4e7b49d3b5e0a6c9f2d4a104, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 6c8f2d1a4e7b49d3b5e0a6c9f2d4a104, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: eac352f8d3eb3d242b1a841afd0f125b, type: 2}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 1

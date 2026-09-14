@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6637c6d89d342ba4c874afdd6dc64961, type: 3}
+  m_Name: TrashDropTable
+  m_EditorClassIdentifier: Assembly-CSharp::TrashDropTable
+  entries:
+  - item: {fileID: 11400000, guid: df06aeb2b856da448a1dff015585eeb8, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 5857336856112615176, guid: 2b85839c1b93db0408dd40fa38aef8a9, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: eac352f8d3eb3d242b1a841afd0f125b, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 7271286606392365626, guid: c506bf22880081043a338c522660d449, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 6c8f2d1a4e7b49d3b5e0a6c9f2d4a104, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 5820945108672657789, guid: 792dc3dc42df33a4e9bea5370f4dfd4b, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 7fb682be3e6d4fd2a6e23f4c9bd8e102, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 4382356537841308710, guid: 1b51a90d58ee11849a2b4da3eb9f4e67, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 9e75bcb1e5df4c6ca2e7d641d4b4a101, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 6135982269447910807, guid: 734e6b5547e72fe4fb8a15d95d3c9821, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 80dd94d1a520a9b4aaddb8f645852d57, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 3006512197043063432, guid: e5717646a7669fa47a899797beac600b, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 0a0ee2a61217f6f46a5dc08ea01f714d, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 3229546675402776280, guid: 117eb77a9426726409278b4dc6698ec5, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 1a4d9c6f2b7e43d8a5f0c1e6b9d3a103, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 4413729688617757082, guid: a201c1d270d0d5a4f991ba695d1d32ea, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 1f1083353ac8f664794512f5b793150a, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 2556556223799086772, guid: bea15edf41ab17c4cb40e25ec2c811fc, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 5f7bdb2aa4805214a92806652463dacc, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 5120743472601034390, guid: c14958ff8aa3f91499e4d7132642a923, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 5f82bfaedfe395d4bab19aa4add23cdf, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 7266859962568417400, guid: 1e8a143767563e9488b0a8393bef5cfe, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 8bb47be5e695c0c46b6d8d6dc9e9d872, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 1648158808281502458, guid: 764b3b8e53d84304daf467c87dcc291f, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 22a6a723abb4d9d4c9b1432f26050870, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 8352514670499706629, guid: 79504e4cc049de44d9a02d4e5f2f9100, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: dfa53f82ea30f2b489618f57394cb30c, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 3547930389361567556, guid: 1326d59ec8036114cb63c1ad10fb29a7, type: 3}
+    weight: 6.6666665
+  - item: {fileID: 11400000, guid: 3741c1863ceea8f4f8528a403b289d56, type: 2}
+    ordinaryTrash: 0
+    pickupPrefab: {fileID: 3067214219581355359, guid: 4c9c180eed54df843ac990d62514752f, type: 3}
+    weight: 6.6666665

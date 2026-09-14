@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4089433f18ef941ae6a265b2203f05, type: 3}
+  m_Name: BagCapacity
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
+  upgradeId: bag_capacity
+  displayName: Bag Capacity
+  description: Increase inventory slot capacity.
+  upgradeType: 0
+  icon: {fileID: -1385574065, guid: 4b90c9c21e04cbb40a12f342069ed779, type: 3}
+  price: 800
+  maxLevel: 4
+  amountPerLevel: 10
+  priceGrowth: 1.35
+  pricesByLevel: 20030000a00f0000e02e000050c30000
+  amountsByLevel:
+  - 10
+  - 20
+  - 40
+  - 50
+  iconsByLevel:
+  - {fileID: 1994947014, guid: cea1a13a4a2a2464c9be2ee67f08bf2c, type: 3}
+  - {fileID: 888319241, guid: 2720a08dd1dba494aaf8d06acdacafbd, type: 3}
+  sortOrder: 0

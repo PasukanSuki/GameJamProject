@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d4c2d7b0d414ea1a9f67a6d16b1f003, type: 3}
+  m_Name: Recycled Tin Can Pencil Holder
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDefinition
+  itemId: CR002
+  displayName: Recycled Tin Can Pencil Holder
+  icon: {fileID: 75632874, guid: f411f61f616a92f43a99867dc0939c50, type: 3}
+  description: Radio assembled from electronic components.
+  stackLimit: 250
+  sellValue: 0

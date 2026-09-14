@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4f5b6c7d8e4901a2b3c4d5e6f70819, type: 3}
+  m_Name: RecycledTinCanPencilHolderRecipe
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
+  output: {fileID: 11400000, guid: 8d7e6f5a4b3c2910e1f2a3b4c5d6e708, type: 2}
+  outputQuantity: 1
+  ingredients:
+  - item: {fileID: 0}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 7fb682be3e6d4fd2a6e23f4c9bd8e102, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 80dd94d1a520a9b4aaddb8f645852d57, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 7fb682be3e6d4fd2a6e23f4c9bd8e102, type: 2}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 7fb682be3e6d4fd2a6e23f4c9bd8e102, type: 2}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 1
